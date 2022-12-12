@@ -1,17 +1,18 @@
 from telegram import Update
-from telegram.ext import Updater, CommandHandler, ContextTypes
+from telegram.ext import Updater, CommandHandler, ContextTypes , ApplicationBuilder
 from bot_commands import *
 
-updater = Updater('5786268103:AAFRBnAdthWoSYvIdMATvgwkQOyB9xNUtug')
+update = ApplicationBuilder().token('5786268103:AAFRBnAdthWoSYvIdMATvgwkQOyB9xNUtug').build()
 
-updater.dispatcher.add_handler(CommandHandler("hi", hi_command))
-updater.dispatcher.add_handler(CommandHandler("time", time_command))
-updater.dispatcher.add_handler(CommandHandler("help", help_command))
-# aupdater.dispatcher.add_handler(CommandHandler("sum", sum_command))
+update.add_handler(CommandHandler("hi", hi_command))
+update.add_handler(CommandHandler("time", time_command))
+update.add_handler(CommandHandler("help", help_command))
+update.add_handler(CommandHandler("sum", sum_command))
 
 print('server start')
-updater.start_polling()
-updater.idle()
+# update.start_polling()   # не подходит
+update.run_polling()
+# update.idle()     # не подходит
 
 
 
