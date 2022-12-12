@@ -1,11 +1,11 @@
 from telegram import Update
-from telegram.ext import Updater, CommandHandler, CallbackContext, ApplicationBuilder
+from telegram.ext import Updater, CommandHandler, CallbackContext, ApplicationBuilder, ContextTypes
 import datetime
 from spy import *
 
-async def hi_command(update: Update, context: CommandHandler):
+async def hi_command(update: Update, context: ApplicationBuilder):
     log(update, context)
-    await update.message.reply_text(f'hi {update.effective_user.first_name}!')
+    await update.message.reply_text(f'Hi {update.effective_user.first_name}!')
 
 async def help_command(update: Update, context: ApplicationBuilder):
     log(update, context)
