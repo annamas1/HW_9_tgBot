@@ -23,3 +23,12 @@ async def sum_command(update: Update, context: ApplicationBuilder):
     x = int(items[1])
     y = int(items[2])
     await update.message.reply_text(f'{x} + {y} = {x+y}')
+
+async def mult_command(update: Update, context: ApplicationBuilder):
+    log(update, context)
+    msg = update.message.text
+    print(msg)
+    items = msg.split()  
+    x = int(items[1])
+    y = int(items[2])
+    await update.message.reply_text(f'{x} * {y} = {x*y}')

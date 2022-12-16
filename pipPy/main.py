@@ -9,6 +9,7 @@ update.add_handler(CommandHandler("hi", hi_command))
 update.add_handler(CommandHandler("time", time_command))
 update.add_handler(CommandHandler("help", help_command))
 update.add_handler(CommandHandler("sum", sum_command))
+update.add_handler(CommandHandler("mult", mult_command))
 
 print('server start')
 # update.start_polling()   # не подходит
