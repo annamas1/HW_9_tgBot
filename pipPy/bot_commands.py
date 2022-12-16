@@ -3,6 +3,7 @@ from telegram.ext import Updater, CommandHandler, CallbackContext, ApplicationBu
 import datetime
 from spy import *
 
+
 async def hi_command(update: Update, context: CallbackContext):
     log(update, context)
     await update.message.reply_text(f'Hi {update.effective_user.first_name}!')
@@ -28,7 +29,7 @@ async def sum_command(update: Update, context: CallbackContext):
     await update.message.reply_text(f'{x} + {y} = {x+y}')
 
 
-async def mult_command(update: Update, context: ApplicationBuilder):
+async def mult_command(update: Update, context: CallbackContext):
     log(update, context)
     msg = update.message.text
     print(msg)
