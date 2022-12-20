@@ -2,7 +2,6 @@ from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext, ContextTypes , ApplicationBuilder
 from bot_commands import *
 from spy import *
-# import logging
 
 update = ApplicationBuilder().token('5786268103:AAFRBnAdthWoSYvIdMATvgwkQOyB9xNUtug').build()
 
@@ -13,13 +12,14 @@ update.add_handler(CommandHandler("sum", sum_command))
 update.add_handler(CommandHandler("mult", mult_command))
 
 print('server start')
-
 update.run_polling()
+
+
+
+
 
 # update.start_polling()   # не подходит
 # update.idle()     # не подходит
-
-
 
 
 
