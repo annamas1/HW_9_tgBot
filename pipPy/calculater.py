@@ -69,6 +69,6 @@ def callback_func(query):
     
     if value == 'Ошибка!': value = ''
 
-# print('=== start calculater ===')
+print('=== start calculater ===')
 bot.polling(non_stop=False, interval=0)
 
